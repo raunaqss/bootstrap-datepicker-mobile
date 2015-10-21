@@ -182,6 +182,14 @@ Set the default of `autoclose` to true for a better user experience:
 $.fn.datepicker.defaults.autoclose = true;
 ```
 
+When viewed on an iOS device the date picker will use iOS buttons by default which can affect the width of the control. To work around that
+add the following to the controls CSS class.
+
+```css
+  -webkit-appearance: none;
+  -moz-appearance: none;
+```
+
 
 ## Notes
 
