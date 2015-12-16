@@ -15,7 +15,7 @@
 (function($, Modernizr, window) {
 
   // Set the default datepicker format
-  $.fn.datepicker.defaults.format = "mm/dd/yy";
+  $.fn.datepicker.defaults.format = "dd/mm/yy";
 
   // Add support for datepickers globally to use input[type=date]
   var nativeDateFormat = /^\d{4}-\d{2}-\d{2}$/;
@@ -36,7 +36,7 @@
       if (nativeDateFormat.test(val)) {
         valMoment = moment(val, 'YYYY-MM-DD');
       } else if (datepickerDateFormat.test(val)) {
-        valMoment = moment(val, 'MM/DD/YY');
+        valMoment = moment(val, 'DD/MM/YY');
       }
 
       var isMoment = moment.isMoment(valMoment);
@@ -47,7 +47,7 @@
         $input.val(val);
         $input.attr('type', 'date');
       } else {
-        if (isMoment) val = valMoment.format('MM/DD/YY');
+        if (isMoment) val = valMoment.format('DD/MM/YY');
         $input.attr('type', 'text');
         $input.val(val);
         if (isMobile) {
